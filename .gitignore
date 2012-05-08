@@ -15,3 +15,13 @@ spec/reports
 test/tmp
 test/version_tmp
 tmp
+scope
+.DS_Store?
+.DS_Store
+*.DS_Store
+ehthumbs.db
+Icon?
+Thumbs.db
+.idea
+
+
