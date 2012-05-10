@@ -1,7 +1,6 @@
 require 'tumblr-v2-api/config'
 require 'tumblr-v2-api/request'
 require 'tumblr-v2-api/connection'
-
 require 'tumblr-v2-api/authenticatable'
 
 module TumblrV2Api

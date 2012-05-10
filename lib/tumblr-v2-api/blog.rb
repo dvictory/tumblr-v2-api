@@ -15,6 +15,7 @@ module TumblrV2Api
     include TumblrV2Api::Blog::Post
 
     attr_accessor *Config::VALID_OPTIONS_KEYS
+    attr_accessor :total_posts
     info_reader :title,:posts,:name,:url,:updated,:description,:ask,:ask_anon,:likes
 
     alias :blog_name :blog_id
@@ -59,6 +60,8 @@ module TumblrV2Api
       end
       options[:api_key] = consumer_key
       status = get("/v2/blog/#{blog_id}/posts#{type.nil? ? "":"/#{type}"}", options)
+
+      instance_variable_set("@total_posts".to_sym,status.body["response"]["total_posts"] )
 
       status.body["response"]["posts"].map do |post|
         TumblrV2Api::Post.new(post)
