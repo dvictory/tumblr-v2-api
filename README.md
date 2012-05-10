@@ -26,7 +26,13 @@ And then execute:
 
 ## Usage
 
-TODO: Write usage instructions here
+    blog = Tumbler::Blog.new(:blog_id=>"derekvictory.tumblr.com")
+    blog.info  #returns hash of blog info
+    blog.followers
+    blog.posts(:limit=>1)  #returns array of posts, in this case it limits the return posts to 1
+
+    user = Tumbler::User.new
+    user.info #returns info about current authorized user.
 
 ## Contributing
 
